@@ -10,6 +10,7 @@ import {
 } from "reactstrap";
 import { Control, Form, Errors, actions } from "react-redux-form";
 import { Link } from "react-router-dom";
+import { baseUrl } from "../shared/baseUrl";
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !val || val.length <= len;
@@ -26,7 +27,16 @@ class Contact extends Component {
    }
 
    handleSubmit(values) {
-      alert("Current State: " + JSON.stringify(values));
+      alert("Thank You for Your Feedback!: " + JSON.stringify(values));
+      this.props.postFeedback(
+         values.firstname,
+         values.lastname,
+         values.telnum,
+         values.email,
+         values.agree,
+         values.contactType,
+         values.message
+      );
       this.props.resetFeedbackForm();
    }
 
