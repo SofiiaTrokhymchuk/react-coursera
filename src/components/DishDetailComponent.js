@@ -11,7 +11,6 @@ import {
    Modal,
    ModalBody,
    ModalHeader,
-   Col,
    Row,
    Label,
 } from "reactstrap";

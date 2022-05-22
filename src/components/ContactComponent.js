@@ -4,13 +4,11 @@ import {
    BreadcrumbItem,
    Button,
    Label,
-   Input,
    Col,
    Row,
 } from "reactstrap";
-import { Control, Form, Errors, actions } from "react-redux-form";
+import { Control, Form, Errors } from "react-redux-form";
 import { Link } from "react-router-dom";
-import { baseUrl } from "../shared/baseUrl";
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !val || val.length <= len;
@@ -88,7 +86,11 @@ class Contact extends Component {
                      >
                         <i className="fa fa-phone"></i> Call
                      </a>
-                     <a role="button" className="btn btn-info">
+                     <a
+                        role="button"
+                        className="btn btn-info"
+                        href="tel:+85212345678"
+                     >
                         <i className="fa fa-skype"></i> Skype
                      </a>
                      <a
